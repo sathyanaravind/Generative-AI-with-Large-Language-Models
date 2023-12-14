@@ -8,12 +8,12 @@ Notes for the [Generative AI with Large Language Models (LLMs)](https://www.deep
 
 
 ### [Week 1: Generative AI use cases, project lifecycle, and model pre-training](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/tree/main/Week%201%3A%20Generative%20AI%20use%20cases%2C%20project%20lifecycle%2C%20and%20model%20pre-training)
-Generative AI and LLMs
-LLM Use Case and Tasks
-Text Generation Before Transformers
-Transformers Architecture
-Generating Text with Transformers
-Transformers: Attention is All You Need
-Prompting and Prompt Engineering
-Generative Configuration
-Generative AI Project Lifecycle
+*Generative AI and LLMs
+*LLM Use Case and Tasks
+*Text Generation Before Transformers
+*Transformers Architecture
+*Generating Text with Transformers
+*Transformers: Attention is All You Need
+*Prompting and Prompt Engineering
+*Generative Configuration
+*Generative AI Project Lifecycle
