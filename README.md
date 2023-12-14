@@ -2,6 +2,7 @@
 
 Notes for the [Generative AI with Large Language Models (LLMs)](https://www.deeplearning.ai/courses/generative-ai-with-llms/) from DEEPLEARNING.AI
 
+## Course Materials
 ### [Week 1: Generative AI use cases, project lifecycle, and model pre-training](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/tree/main/Week%201%3A%20Generative%20AI%20use%20cases%2C%20project%20lifecycle%2C%20and%20model%20pre-training)
 
 -Introduction to LLMs and the generative AI project lifecycle
@@ -20,6 +21,7 @@ Notes for the [Generative AI with Large Language Models (LLMs)](https://www.deep
 -Course conclusion and ongoing research
 
 
+### Notes
 
 ### [Week 1: Generative AI use cases, project lifecycle, and model pre-training](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/tree/main/Week%201%3A%20Generative%20AI%20use%20cases%2C%20project%20lifecycle%2C%20and%20model%20pre-training)
   - Generative AI and LLMs**
