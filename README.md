@@ -89,20 +89,20 @@ random(weighted) sampling
 
 Generative AI project lifecycle  
 
-Scope
+1. Scope
 - Define the use case
   
-Select
+2. Select
 -  Choose an existing model or pretrain your own
   
-Adapt and align model  
+3. Adapt and align model  
 - Prompt
 engineering
 - Fine-tuning
 - Align with human feedback  
 - Evaluate
   
-Application integration   
+4. Application integration   
 - Optimize and deploy the model for inference
 - Augment model and build LLM-powered applications
 
