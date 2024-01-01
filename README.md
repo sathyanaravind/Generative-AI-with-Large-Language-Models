@@ -107,6 +107,8 @@ Pre-training and scaling laws
 
 PEFT
 
+Parameter efficient fine-tuning 
+
 Computational challenges  
 
 
