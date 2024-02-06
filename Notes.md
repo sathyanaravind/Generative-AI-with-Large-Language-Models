@@ -3,7 +3,8 @@
 Generative AI is a general-purpose technology like electricity.
 
 - foundation models also called Base models. Eg: BERT, GPT, FLAN-T5, LLaMa, BLOOM, PaLM
-- parameters - memory
+- parameters - also called memory. Models with more paramemters are able to capture more understanding of the language
+- 
 #### Prompt and completions
 - prompt: text passed into the llm
 - context window: space or memory available for the prompt
@@ -16,9 +17,20 @@ Generative AI is a general-purpose technology like electricity.
 #### Transformers
 - scale efficiently, parallel process, attention to input meaning
 - df
--   the power of the transformer is to learn the relevance of all the words in the sentence to every other and to apply attention weights to these realtions
--   attention weights are learned through the llm training
+-   the power of the transformer is to learn the relevance of all the words in the sentence to every other and to apply attention weights to these relations
+-   attention weights are learned during the llm training
 -   Transformer working
 Encoder: input tokenizer -> embedding -> positional encoding -> multi-headed self-attention -> feed-forward network -> softmax layer
 Decoder: 
-- self-attention - the importance of each word to all other words in the input
+    - self-attention - the importance of each word to all other words in the input
+  - encoder models: BERT
+  - encode decoder models: BART, T5
+  - decoder models: GPT, BLOOM, LLaMa
+
+#### Prompting and prompt engineering
+- In-context learning(ICL): providing examples of tasks inside the context window
+  - zero shot inference: provide no example. Large llms are good at this and not small
+  - one shot inference: inclusion of one example in the prompt
+  - few shot inference: a few examples
+- generally, if the model underperforms even with 5-6 examples consider fine-tuning
+
