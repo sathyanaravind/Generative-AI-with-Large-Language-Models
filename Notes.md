@@ -20,9 +20,10 @@ Generative AI is a general-purpose technology like electricity.
 -   the power of the transformer is to learn the relevance of all the words in the sentence to every other and to apply attention weights to these relations
 -   attention weights are learned during the llm training
 -   Transformer working
-Encoder: input tokenizer -> embedding -> positional encoding -> multi-headed self-attention -> feed-forward network -> softmax layer
-Decoder: 
+    - Encoder: input tokenizer -> embedding -> positional encoding -> multi-headed self-attention -> feed-forward network -> softmax layer
+    - Decoder: 
     - self-attention - the importance of each word to all other words in the input
+- models
   - encoder models: BERT
   - encode decoder models: BART, T5
   - decoder models: GPT, BLOOM, LLaMa
