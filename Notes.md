@@ -1,10 +1,10 @@
 ## Generative AI with LLMs
 
 -[Prompt and completions](#prompt-and-completions)  
--[Transfomers](####Transfomers)  
+-[Transfomers](#Transfomers)  
 -[Prompting and prompt engineering](#prompting-and-prompt-engineering)  
--[Generative configuration - inference parameters](####Generative-configuration-inference-parameters)  
--[Generative AI Project Life Cycle](####Generative-AI-Project-Life-Cycle)  
+-[Generative configuration - inference parameters](#Generative-configuration-inference-parameters)  
+-[Generative AI Project Life Cycle](#Generative-AI-Project-Life-Cycle)  
 
 
 Generative AI is a general-purpose technology like electricity.
