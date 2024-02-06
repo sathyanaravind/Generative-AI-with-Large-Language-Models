@@ -1,1 +1,18 @@
+## Generative AI with LLMs
 
+Generative AI is a general-purpose technology like electricity.
+
+- foundation models also called Base models. Eg: BERT, GPT, FLAN-T5, LLaMa, BLOOM, PaLM
+- parameters - memory
+#### Prompt and completions
+- prompt: text passed into the llm
+- context window: space or memory available for the prompt
+- completion: output of a model. Typically 1000 words but differs for different models
+<img width="862" alt="image" src="https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/7d6157a9-2894-44ba-a26c-beb964526249">
+- LLM use cases and tasks: essay writing, summarising, translating, code generation, entity
+
+
+#### Transformers
+- scale efficiently, parallel process, attention to input meaning
+- df
+-   
