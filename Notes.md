@@ -36,13 +36,13 @@ Generative AI is a general-purpose technology like electricity.
 - generally, if the model underperforms even with 5-6 examples consider fine-tuning
 
 #### Generative configuration - inference parameters
-- max new tokens: no of tokens the model will generate
+- **max new tokens**: no of tokens the model will generate
 - greedy vs random sampling
     - greedy: word with the highest probability is selected from the softmax output. Prone to repetition
     - random: select a token using random-weighted sampling across the softmax outputs. For more creativity
-- sample top K: select the number of tokens to choose from randomly
-- sample top P: specify the total probability to choose from
-- temperature: it is a scaling factor that applies to the final softmax output and controls the shape of the probability distribution the model calculates for the next word. The higher the temperature higher the randomness. In contrast to top K and top P change in temperature value can alter the predictions of the model.
+- **sample top K**: select the number of tokens to choose from randomly
+- **sample top P**: specify the total probability to choose from
+- **temperature**: it is a scaling factor that applies to the final softmax output and controls the shape of the probability distribution the model calculates for the next word. The higher the temperature higher the randomness. In contrast to top K and top P change in temperature value can alter the predictions of the model.
 
 #### Generative AI Project Life Cycle
 
