@@ -1,8 +1,8 @@
 ## Generative AI with LLMs
 
--[Prompt and completions](####prompt-and-completions)  
+-[Prompt and completions](#prompt-and-completions)  
 -[Transfomers](####Transfomers)  
--[Prompting and prompt engineering](####prompting-and-prompt-engineering)  
+-[Prompting and prompt engineering](#prompting-and-prompt-engineering)  
 -[Generative configuration - inference parameters](####Generative-configuration-inference-parameters)  
 -[Generative AI Project Life Cycle](####Generative-AI-Project-Life-Cycle)  
 
