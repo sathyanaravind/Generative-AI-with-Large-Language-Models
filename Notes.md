@@ -55,3 +55,68 @@ Generative AI is a general-purpose technology like electricity.
 
 ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/f2dea306-5e58-4999-a1e5-e6d64af99b64)
 
+#### Pre-training LLMs
+After deciding the scope of the LLM application the next step is to choose the the model. Here we can either use a 
+1. Foudational model: pre trained LLM or
+2. Train your own model: custom LLm
+   In general, always a foundational model is used. There are many open-source and private model hubs available like the huggingface model hub. These hubs also contains model cards which include information about the models such as
+- model details,
+- uses, bias, risk and limitations,
+- training details 
+- evaluation
+**Model architecture and pre-training objectives**
+  LLMs encode a deep statistical representation of language during pre-training on a vast amount of unstructured textual data
+Pre-training requires a lot of compute and due to bias and bad quality of data often only 1-3 % of tokens are used.
+- Autoencoding models: encoder
+    - pre-trained using **Masked Language Modeling(MLM)**
+    - objective: reconstruct text("denoising")
+    - bidirectional context: knows full context of the token not just previous tokens
+    - use cases: sentimental analysis, names entity recognition, word classification
+    - eg: BERT, ROBERTA
+- Autoregressive models: decoder
+    - pre-trained using **Causal Language Modeling(CLM)**
+    - objective: predict next token
+    - unidirectional context
+    - use cases: text generation, other emergent behaviours
+    - eg: GPT, BLOOM
+- Sequence to Sequence Models:
+    - pre-training objective changes from model to models, taking T5 as example
+    - pre-train the encoder with span correction: **mask random input tokens** and replace them with **sentinel token**(random tokens not in vocabulary)
+    - objective: reconstruct span
+    - use cases: translation, summarization, Q&A
+    - T5, BART
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/9e5d59c5-223b-4512-9ac4-a46776245a2c)
+
+#### Computational Challenges
+
+- approximate GPU RAM for 1B parameters
+    - 1 parameter = 4 bytes(32-bit float)
+    - 1B parameters = 4*10^9 = 4GB
+    - memory to store model: 4GB @ 32bit full precision
+    - memory to train model: 24GB @ 32bit full precision
+    - too much for consumer hardware
+    - to fix : quantization, distributed training, finetuning
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/ea99112a-d21f-4a17-8e3f-df2797602397)
+
+- Quantization
+    - aim is to reduce required memory to store and train models
+    - statistically projects the original 32-bit floating point numbers to lower precision spaces using scaling factors
+    - Quantization-aware-training(QAT) learns quantization scaling factors during training
+    - **BFLOAT16** popular choice
+ 
+### Scaling laws and compute optimal models
+
+- compute budget
+- 1 petaflop/s-days : # floating point operations performed at 1 petaflop per second for one day
+- ie, 8 V100 or 2 A100 GPUs running at full efficiency for 24 hrs
+- from the paper "Scaling laws for Neural Language Models" the test loss decreases with dataset size, compute budget and performance if the other two are kept constant and follow the power law
+- Chinchilla scaling laws for model and dataset size
+    - very large models may be over-parametrized and under-trained
+    - smaller models trained on more data could outperform large models
+    - compute optimal training datasize is ~20x the no of parameters
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/80b0da9a-29e8-4850-9d71-7bc32c11f95d)
+
+
