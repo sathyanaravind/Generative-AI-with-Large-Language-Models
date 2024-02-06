@@ -1,6 +1,6 @@
 ## Generative AI with LLMs
 
-Generative AI use cases, project lifecycle, and model pre-training
+### Generative AI use cases, project lifecycle, and model pre-training
 
 - [Prompt and completions](#prompt-and-completions)  
 - [Transformers](#Transformers)  
@@ -15,9 +15,9 @@ Generative AI use cases, project lifecycle, and model pre-training
     - [Efficient Multi-GPU Compute Strategies](#Efficient-Multi-GPU-Compute-Strategies)
     - [Chinchilla](#Chinchilla)
     - 
-Fine-tuning and evaluating large language models
+### Fine-tuning and evaluating large language models
 
-Reinforcement learning and LLM-powered applications
+### Reinforcement learning and LLM-powered applications
 
 
 Generative AI is a general-purpose technology like electricity.
