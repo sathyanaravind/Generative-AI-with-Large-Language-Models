@@ -1,7 +1,7 @@
 ## Generative AI with LLMs
 
 - [Prompt and completions](#prompt-and-completions)  
-- [Transfomers](#Transfomers)  
+- [Transformers](#Transformers)  
 - [Prompting and prompt engineering](#prompting-and-prompt-engineering)  
 - [Generative configuration - inference parameters](#Generative-configuration-inference-parameters)  
 - [Generative AI Project Life Cycle](#Generative-AI-Project-Life-Cycle)  
@@ -52,4 +52,6 @@ Generative AI is a general-purpose technology like electricity.
 - **temperature**: it is a scaling factor that applies to the final softmax output and controls the shape of the probability distribution the model calculates for the next word. The higher the temperature higher the randomness. In contrast to top K and top P change in temperature value can alter the predictions of the model.
 
 #### Generative AI Project Life Cycle
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/f2dea306-5e58-4999-a1e5-e6d64af99b64)
 
