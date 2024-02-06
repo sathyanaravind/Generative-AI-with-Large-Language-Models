@@ -25,7 +25,7 @@ Generative AI is a general-purpose technology like electricity.
 - foundation models also called Base models. Eg: BERT, GPT, FLAN-T5, LLaMa, BLOOM, PaLM
 - parameters - also called memory. Models with more parameters can capture more understanding of the language
 - 
-#### Prompt and completions
+### Prompt and completions
 - prompt: text passed into the llm
 - context window: space or memory available for the prompt
 - completion: output of a model. Typically 1000 words but differs for different models
@@ -34,7 +34,7 @@ Generative AI is a general-purpose technology like electricity.
 - LLM use cases and tasks: essay writing, summarising, translating, code generation, entity
 
 
-#### Transformers
+### Transformers
 - scale efficiently, parallel process, attention to input meaning
 - df
 -   the power of the transformer is to learn the relevance of all the words in the sentence to every other and to apply attention weights to these relations
@@ -48,14 +48,14 @@ Generative AI is a general-purpose technology like electricity.
   - encode decoder models: BART, T5
   - decoder models: GPT, BLOOM, LLaMa
 
-#### Prompting and prompt engineering
+### Prompting and prompt engineering
 - In-context learning(ICL): providing examples of tasks inside the context window
   - zero shot inference: provide no example. Large llms are good at this and not small
   - one shot inference: inclusion of one example in the prompt
   - few shot inference: a few examples
 - generally, if the model underperforms even with 5-6 examples consider fine-tuning
 
-#### Generative configuration - inference parameters
+### Generative configuration - inference parameters
 - **max new tokens**: no of tokens the model will generate
 - greedy vs random sampling
     - greedy: word with the highest probability is selected from the softmax output. Prone to repetition
@@ -64,26 +64,25 @@ Generative AI is a general-purpose technology like electricity.
 - **sample top P**: specify the total probability to choose from
 - **temperature**: it is a scaling factor that applies to the final softmax output and controls the shape of the probability distribution the model calculates for the next word. The higher the temperature higher the randomness. In contrast to top K and top P change in temperature value can alter the predictions of the model.
 
-#### Generative AI Project Life Cycle
+### Generative AI Project Life Cycle
 
 ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/f2dea306-5e58-4999-a1e5-e6d64af99b64)
 
 #### Pre-training and Scaling laws
 After deciding the scope of the LLM application the next step is to choose the the model. Here we can either use a 
 1. Foudational model: pre-trained LLM or
-2. Train your own model: custom LLm
+2. Train our own model: custom LLm  
    In general, always a foundational model is used. There are many open-source and private model hubs available like the huggingface model hub. These hubs also contain model cards which include information about the models such as
 - model details,
 - uses, bias, risk and limitations,
 - training details 
 - evaluation
 #### Model architecture and pre-training objectives**
-  LLMs encode a deep statistical representation of language during pre-training on a vast amount of unstructured textual data
-Pre-training requires a lot of compute and due to bias and bad quality of data often only 1-3 % of tokens are used.
+  LLMs encode a deep statistical representation of language during pre-training on a vast amount of unstructured textual data. Pre-training requires a lot of compute and due to bias and bad quality of data often only 1-3 % of tokens are used.
 - Autoencoding models: encoder
     - pre-trained using **Masked Language Modeling(MLM)**
     - objective: reconstruct text("denoising")
-    - bidirectional context: knows full context of the token not just previous tokens
+    - bidirectional context: knows the full context of the token not just previous tokens
     - use cases: sentimental analysis, names entity recognition, word classification
     - eg: BERT, ROBERTA
 - Autoregressive models: decoder
@@ -103,13 +102,13 @@ Pre-training requires a lot of compute and due to bias and bad quality of data o
 
 #### Computational Challenges
 
-- approximate GPU RAM for 1B parameters
-    - 1 parameter = 4 bytes(32-bit float)
-    - 1B parameters = 4*10^9 = 4GB
-    - memory to store model: 4GB @ 32bit full precision
-    - memory to train model: 24GB @ 32bit full precision
-    - too much for consumer hardware
-    - to fix : quantization, distributed training, finetuning
+- approximate GPU RAM for 1B parameters  
+1 parameter = 4 bytes(32-bit float)  
+1B parameters = 4*10^9 = 4GB  
+memory to store model: 4GB @ 32bit full precision  
+memory to train model: 24GB @ 32bit full precision  
+too much for consumer hardware  
+- to fix: quantization, distributed training, finetuning   
 
 ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/ea99112a-d21f-4a17-8e3f-df2797602397)
 
