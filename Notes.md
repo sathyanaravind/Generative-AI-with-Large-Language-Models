@@ -11,11 +11,12 @@
 - [Computational Challenges](#Computational-Challenges)
     - [Approximate GPU RAM for 1B parameter]
     - [Quantization](#Qutanization)
-    - [Efficient Multi-GPU Compute Strategies](#Efficient-Multi-GPU-Compute-Strategies)
-        - Data Parallel
-        - Model Shradding
+- [Efficient Multi-GPU Compute Strategies](#Efficient-Multi-GPU-Compute-Strategies)
+    - Data Parallel
+    - Model Shradding
+- [Scaling laws and compute optimal models](#Scaling-laws-and-compute-optimal-models)
     - [Chinchilla](#Chinchilla)
-  - [Pre-training for domain adaptation](#Pre-training-for-domain-adaptation)
+    - [Pre-training for domain adaptation](#Pre-training-for-domain-adaptation)
  
 ### Fine-tuning and evaluating large language models
 - [Fine-tuning an LLM with instructions prompts](#Fine-tuning-an-LLM-with-instructions-prompts)
@@ -28,6 +29,8 @@
     - BLEU
 - [Benchmarks](#Benchmarks)
 - [Parameter Efficient Fine-tuning](#Parameter-Efficient-Fine-tuning)
+- [LoRA](#LoRA)
+- [Soft prompts](#Soft-prompts)
 
 ### Reinforcement learning and LLM-powered applications
 
