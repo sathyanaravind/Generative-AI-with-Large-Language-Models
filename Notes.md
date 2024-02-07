@@ -15,7 +15,18 @@
     - [Efficient Multi-GPU Compute Strategies](#Efficient-Multi-GPU-Compute-Strategies)
     - [Chinchilla](#Chinchilla)
     - 
+ 
+
+
 ### Fine-tuning and evaluating large language models
+- [Fine-tuning an LLM with instructions prompts](#Fine-tuning-an-LLM-with-instructions-prompts)
+- [Fine-tuning on a single task](#Fine-tuning-on-a-single-task)
+    - Catastrophic forgetting
+- [Muti-task, instruction fine-tuning](#Muti-task-instruction-fine-tuning)
+    - FLAN
+- [Model Evaluation metrics](#Model-evaluation-metrics)
+
+
 
 ### Reinforcement learning and LLM-powered applications
 
@@ -115,7 +126,7 @@ evaluation
 
 
 
-#### Computational Challenges
+### Computational Challenges
 
 - approximate GPU RAM for 1B parameters  
 1 parameter = 4 bytes(32-bit float)  
@@ -137,7 +148,7 @@ too much for consumer hardware
  
 
   
-#### Efficient Multi-GPU Compute Strategies
+### Efficient Multi-GPU Compute Strategies
 
 - Data parallel(eg: Distributed Data Parallel-DDP)
     - allows parallel compuation and 
@@ -177,3 +188,37 @@ too much for consumer hardware
 
 
 
+
+
+### Fine-tuning an LLM with instructions prompts
+
+- limitations of in-context learning
+    - may not work for smaller models
+    - examples take up context window space
+- LLM fine-tuning high-level
+pre-trained LLM -> prompt completion pairs -> fine-tuned LLM
+- full fine-tuning: fine-tuning by updating all parameters. It is memory and compute-intensive like pre-training
+- LLM fine-tuning
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/0686614b-0ae0-4095-9bd9-dd993eb01951)
+
+### Fine-tuning on a single task
+Pre-trained LLM -> single-task training dataset -> instruct LLM
+- often, 500-1000 examples need to fine-tune the single task
+- catastrophic forgetting: reduction of performance on other tasks except the single fine-tuned task
+    - not a bad thing if the current task donot need good performance in other tasks
+    - fine-tune on multiple tasks at the same time
+    - PEFT
+
+
+### Muti-task, instruction fine-tuning
+- multitask fine-tuning: extension of single task finetuning with training dataset having multiple tasks
+    - needs many examples of each task during training
+    - 50-100,000 training dataset size
+- FLAN: Fine-tuned LAngguge Net refers to specific set of instructions used to institution fine-tuning
+    - eg: FLAN-T5. FLAN-PALM
+    - great, general purpose, instruct model
+    - Chung et al. 2022, “Scaling Instruction-Finetuned Language Models”
+ 
+      
+### Model Evaluation metrics
+- 
