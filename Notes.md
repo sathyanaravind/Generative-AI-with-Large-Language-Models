@@ -1,7 +1,6 @@
-## Generative AI with LLMs
+# Generative AI with LLMs
 
 ### Generative AI use cases, project lifecycle, and model pre-training
-
 - [Prompt and completions](#prompt-and-completions)  
 - [Transformers](#Transformers)  
 - [Prompting and prompt engineering](#prompting-and-prompt-engineering)  
@@ -10,14 +9,14 @@
 - [Pre-training and Scaling laws](#Pre-training-and-Scaling-laws)
 - [Model architecture and pre-training objective](#Model-architecture-and-pre-training-objective)
 - [Computational Challenges](#Computational-Challenges)
-- [Compute budget]
+    - [Approximate GPU RAM for 1B parameter]
     - [Quantization](#Qutanization)
     - [Efficient Multi-GPU Compute Strategies](#Efficient-Multi-GPU-Compute-Strategies)
+        - Data Parallel
+        - Model Shradding
     - [Chinchilla](#Chinchilla)
-    - 
+  - [Pre-training for domain adaptation](#Pre-training-for-domain-adaptation)
  
-
-
 ### Fine-tuning and evaluating large language models
 - [Fine-tuning an LLM with instructions prompts](#Fine-tuning-an-LLM-with-instructions-prompts)
 - [Fine-tuning on a single task](#Fine-tuning-on-a-single-task)
@@ -25,8 +24,10 @@
 - [Muti-task, instruction fine-tuning](#Muti-task-instruction-fine-tuning)
     - FLAN
 - [Model Evaluation metrics](#Model-evaluation-metrics)
-
-
+    - ROUGE
+    - BLEU
+- [Benchmarks](#Benchmarks)
+- [Parameter Efficient Fine-tuning](#Parameter-Efficient-Fine-tuning)
 
 ### Reinforcement learning and LLM-powered applications
 
@@ -37,7 +38,7 @@ Examples of **Foundation models(Base models)**: BERT, GPT, FLAN-T5, LLaMa, BLOOM
 The large language models with more **parameters(memory)** can capture more understanding of the language
 
 ### Prompt and completions
-- prompt: text passed into the llm
+- prompt: text passed into the LLM
 - context window: space or memory available for the prompt
 - completion: output of a model. Typically 1000 words but differs for different models
 - LLM use cases and tasks: essay writing, summarising, translating, code generation, entity recognition
@@ -91,18 +92,16 @@ Decoder: self-attention - the importance of each word to all other words in the 
 #### Pre-training and Scaling laws
 After deciding the scope of the LLM application the next step is to choose the the model. Here we can either use a 
 1. Foudational model: pre-trained LLM     or
-2. Train our own model: custom LLm   
+2. Train our own model: custom LLM
+   
    In general, always a foundational model is used. There are many open-source and private model hubs available like the huggingface model hub. These hubs also contain model cards which include information about the models such as
-model details  
-uses, bias, risk and limitations,  
-training details   
-evaluation
+model details, uses, (bias, risk and limitations), training details, evaluation
 
 
+#### Model architecture and pre-training objectives
 
-
-#### Model architecture and pre-training objectives**
   LLMs encode a deep statistical representation of language during pre-training on a vast amount of unstructured textual data. Pre-training requires a lot of compute and due to bias and bad quality of data often only 1-3 % of tokens are used.
+
 - Autoencoding models: encoder
     - pre-trained using **Masked Language Modeling(MLM)**
     - objective: reconstruct text("denoising")
@@ -141,7 +140,7 @@ too much for consumer hardware
 
 
 - Quantization
-    - aim is to reduce required memory to store and train models
+    - aim is to reduce the required memory to store and train models
     - statistically projects the original 32-bit floating point numbers to lower precision spaces using scaling factors
     - Quantization-aware-training(QAT) learns quantization scaling factors during training
     - **BFLOAT16** popular choice
@@ -170,7 +169,7 @@ too much for consumer hardware
 - compute budget
     - 1 petaflop/s-days : # floating point operations performed at 1 petaflop per second for one day
     - ie, 8 V100 or 2 A100 GPUs running at full efficiency for 24 hrs
-- no of petflops/s-day to pretrain various llms
+- no of petflops/s-day to pre-train various llms
 ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/5ed8289b-c832-4359-a504-ff9bd74d2a41)
 
 - from the paper "Scaling laws for Neural Language Models" the test loss decreases with dataset size, compute budget and performance if the other two are kept constant and follow the power law
@@ -185,9 +184,7 @@ too much for consumer hardware
 
 
 #### Pre-training for domain adaptation
-
-
-
+- BLOOM
 
 
 ### Fine-tuning an LLM with instructions prompts
@@ -221,7 +218,7 @@ Pre-trained LLM -> single-task training dataset -> instruct LLM
  
       
 ### Model Evaluation metrics
-- traditional ml task outputs are deterministic so we can use **accuracy** to evaluate. LLMS are creative so not possible
+- traditional ML task outputs are deterministic so we can use **accuracy** to evaluate. LLMS are creative so not possible
 - ROUGE: 
     - used for summarization
     - compares generated to one or more ref summaries
@@ -243,3 +240,37 @@ Pre-trained LLM -> single-task training dataset -> instruct LLM
     - used for translation
     - compares to human-generated translations
     - BLEU metric = avg(precision across range of n-grams)
+
+
+### Benchmarks
+
+LLMs are complex models so to understand them we need to use pre-existing datasets and associated benchmarks with them. Evaluation metrics can provide limited information about the models.
+
+- GLUE and SuperGlue
+- Massive Multitask Language Understanding(MMLU)
+- Big-Bench
+- Holistic Evaluation of Language Models(HELM)
+
+### Parameter Efficient Fine-tuning
+Full fine-tuning is computationally intense. PEFT only updates a subset of the parameters
+- df
+- PEFT
+    - keep most layers of pre-trained llm frozen and train new additioanl layers
+    - less prone to catastrophic forgetting
+    - saves space and is flexible
+    - trade offs : parameter efficiency, memory efficiency, training speed, model performance and inference cost
+
+- PEFT methods
+  ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/39312833-0958-4968-b2f8-53fd397bb79c)
+
+###  Low-Rank Adaptation of Large Language Models (LoRA)
+
+### Soft prompts
+
+
+
+
+
+
+
+
