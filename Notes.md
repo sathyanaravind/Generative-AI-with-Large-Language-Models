@@ -221,4 +221,25 @@ Pre-trained LLM -> single-task training dataset -> instruct LLM
  
       
 ### Model Evaluation metrics
-- 
+- traditional ml task outputs are deterministic so we can use **accuracy** to evaluate. LLMS are creative so not possible
+- ROUGE: 
+    - used for summarization
+    - compares generated to one or more ref summaries
+    - calculating the most useful score will depend on the sentence, size of the sentence and use case
+    - ROUGE 1, ROUGE 2, ROUGE L
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/08b8f030-7260-4b59-b0d0-8d71be88f54c)
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/7d2bf774-3069-48aa-a07a-cf1e84964af8)
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/059f6989-0de1-41c4-afe1-7c5aa444b15c)
+
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/a3c2e36f-689c-4f5e-8e1f-1394a3c52cd3)
+
+- ROUGE hacking, ROUGE clipping
+![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/95999d7b-a424-42fa-9696-11748910d67d)
+
+
+- BLEU
+    - used for translation
+    - compares to human-generated translations
+    - BLEU metric = avg(precision across range of n-grams)
