@@ -212,6 +212,20 @@ pre-trained LLM -> prompt completion pairs -> fine-tuned LLM
 - LLM fine-tuning
 ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/0686614b-0ae0-4095-9bd9-dd993eb01951)
 
+- fine-tunig process
+    - prepare training dataset
+    - split into train, val and test
+    - take train data and pass onto llm
+    - compare generated completion with label( completions are just probablity distributions of words)
+    - use cross entropy function to calculate loss
+    - update model weights using loss in back propagation
+    - do above for several epoochs with several batches of train data
+ 
+  - fine tuned model is also called **instruct model**
+  - fine tune with instruction prompt is the most common finetuning techique
+ 
+![image](https://github.com/user-attachments/assets/0152f5cc-e4f6-4059-af33-00fa1412c57e)
+
 ### Fine-tuning on a single task
 Pre-trained LLM -> single-task training dataset -> instruct LLM
 - often, 500-1000 examples need to fine-tune the single task
@@ -267,19 +281,46 @@ LLMs are complex models so to understand them we need to use pre-existing datase
 
 ### Parameter Efficient Fine-tuning
 Full fine-tuning is computationally intense. PEFT only updates a subset of the parameters
-- df
+![image](https://github.com/user-attachments/assets/dc26bb3d-9444-496a-9360-309026595b9b)
+
 - PEFT
-    - keep most layers of pre-trained llm frozen and train new additioanl layers
-    - less prone to catastrophic forgetting
+    - some updates only few layers of pre-trained llm and keep most layers of pre-trained llm frozen
+    - all layers of pre-trained llm frozen and train new additioanl layers
+    - less prone to catastrophic forgetting, as only few layers are changed
     - saves space and is flexible
-    - trade offs : parameter efficiency, memory efficiency, training speed, model performance and inference cost
+    - **trade offs : parameter efficiency, memory efficiency, training speed, model performance and inference cost**
 
 - PEFT methods
   ![image](https://github.com/sathyanaravind/Generative-AI-with-Large-Language-Models/assets/77285092/39312833-0958-4968-b2f8-53fd397bb79c)
-
+    - selective : mixed results, not so good on parameter and compute efficiency
+    - reparametirze : LoRA
+    - additive : adapter- add layers in encoder of decoder after attention layer and soft prompts-prompt tuning- adding trainable parameters to inputs or reterainig the embeddings
+      
 ###  Low-Rank Adaptation of Large Language Models (LoRA)
+![image](https://github.com/user-attachments/assets/08d20de3-2034-4460-acd8-98647e9f8548)
 
-### Soft prompts
+- because same number of parameters no impact on inference latency
+- applying LoRA only to attention layers is enough, as attention only conatians most parameters
+- Conceret example using base Transformer Vaswani et al.2017
+    - Transformer wights have dims, d x k = 512 x 64 = 32,768 trainable parametes
+- In LoRA with rank r = 8
+    - A has dim r x k = 8 x 64
+    - B has dim d x k = 512 x 8 = 4096
+    - 86% reduction
+- effectiveness of higher rank appeears to plateau, 1, 2,4,8,16,32.....1024
+- relationship between rank and dataset size needs more empirical data, more research
+- can use different LoRA weights for different tasks
+![image](https://github.com/user-attachments/assets/3a028fae-ee5a-4416-b6ec-cd46a6a6d1bb)
+
+### Soft Prompts or Prompt Tuning 
+![image](https://github.com/user-attachments/assets/4806313d-c2f8-4bb8-abbf-18dd057a1169)
+
+- Prompt tuning is not prompt engineering
+- prompt tuning adds trainable soft prompts to inputs
+- can be used for muitiple tasks
+    - By swiitching out prompts for differnet task we can do inference
+-  prompt tuning doesn't perform as well as full fine tuning for smaller LLMs but as model size increases,the performance of prompt tuning also increase
+-  interpretabilty of soft prompts. 
 
 
 
