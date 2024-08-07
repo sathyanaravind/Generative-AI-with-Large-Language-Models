@@ -324,7 +324,26 @@ Full fine-tuning is computationally intense. PEFT only updates a subset of the p
 
 
 
+## Reinforcement learning and LLM-powered applications
 
+### Reinforcement-Learning-from-Human-Feedback-(RLHF)
+- HHH : Helpful, Honest, Harmless
+-  "Reinforcement learning is a type of machine learning in which an agent learns to make decisions related to a specific goal by taking actions in an environment, with the objective of maximizing some notion of a cumulative reward"
+![image](https://github.com/user-attachments/assets/2159077a-bb09-4a6a-8876-2126615ecc8a)
+
+### Collecting Human Feedback 
+
+![image](https://github.com/user-attachments/assets/e818ca12-da53-41c6-bd23-d76a7255d1af)
+
+![image](https://github.com/user-attachments/assets/f9458d30-b4e7-484a-93f0-47b4b4314bcb)
+
+
+### Proximal Policy Optimization 
+### Scaling Human Feedback 
+### Model optimizations to improve application performance 
+### Using LLMs in Applications 
+### Retrieval augmented generation (RAG) 
+___
 
 
 
