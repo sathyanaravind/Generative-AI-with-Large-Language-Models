@@ -336,10 +336,13 @@ Full fine-tuning is computationally intense. PEFT only updates a subset of the p
 ![image](https://github.com/user-attachments/assets/e818ca12-da53-41c6-bd23-d76a7255d1af)
 
 ![image](https://github.com/user-attachments/assets/f9458d30-b4e7-484a-93f0-47b4b4314bcb)
+![image](https://github.com/user-attachments/assets/fede0ca8-bba3-40c9-acae-38d7f3cb14c9)
 
 
 ### Proximal Policy Optimization 
 ### Scaling Human Feedback 
+![image](https://github.com/user-attachments/assets/87664cec-72e0-41b2-b7c6-cdbdad8952f6)
+
 ### Model optimizations to improve application performance 
 ### Using LLMs in Applications 
 ### Retrieval augmented generation (RAG) 
